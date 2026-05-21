@@ -1,3 +1,9 @@
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+
+import header
+
 from langchain_openai.chat_models import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 
@@ -25,4 +31,5 @@ prompt = template.invoke(
     }
 )
 
+print("Answer to the question using the prompt template:")
 print(model.invoke(prompt))

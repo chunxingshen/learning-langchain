@@ -1,14 +1,8 @@
-import logging
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-from dotenv import load_dotenv
-load_dotenv(override=True)
-
-from langchain_core.globals import set_verbose
-set_verbose(True)
-
-from langchain_core.globals import set_debug
-set_debug(True)
+import header
 
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai.chat_models import ChatOpenAI

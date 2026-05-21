@@ -1,3 +1,9 @@
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+
+import header
+
 from langchain_core.prompts import ChatPromptTemplate
 
 template = ChatPromptTemplate.from_messages(
