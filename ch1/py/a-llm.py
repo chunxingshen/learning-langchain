@@ -22,7 +22,7 @@ set_verbose(True)
 from langchain_core.globals import set_debug
 set_debug(True)
 
-model = ChatOpenAI(model="gpt-3.5-turbo")
+model = ChatOpenAI(model="gpt-3.5-turbo") # type: ignore[call-arg]
 
 response = model.invoke("The houston sky now is")
 print(response.content)
