@@ -1,3 +1,9 @@
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+
+import header
+
 from langchain_core.runnables import chain
 from langchain_openai.chat_models import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
@@ -24,3 +30,4 @@ async def main():
 if __name__ == "__main__":
     import asyncio
     print(asyncio.run(main()))
+#Output: "Many law schools and universities around the world offer LLM (Master of Laws) programs...
