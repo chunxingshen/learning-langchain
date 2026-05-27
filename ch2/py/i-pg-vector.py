@@ -14,6 +14,13 @@ docker run \
 
 """
 
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+
+import header
+
+
 from langchain_community.document_loaders import TextLoader
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -26,9 +33,9 @@ import uuid
 connection = "postgresql+psycopg://langchain:langchain@localhost:6024/langchain"
 
 # Load the document, split it into chunks
-raw_documents = TextLoader('./test.txt', encoding="utf-8").load()
+raw_documents = TextLoader('./smalltest.txt', encoding="utf-8").load()
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000, chunk_overlap=200)
+    chunk_size=200, chunk_overlap=50)
 documents = text_splitter.split_documents(raw_documents)
 
 # Create embeddings for the documents
