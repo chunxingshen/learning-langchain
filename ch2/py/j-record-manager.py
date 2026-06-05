@@ -4,6 +4,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 import header
 
+# To fix original package import error, run the following command: pip install -U langchain-classic 
+
 from langchain_core.indexing import index
 from langchain_classic.indexes import SQLRecordManager
 from langchain_postgres.vectorstores import PGVector
